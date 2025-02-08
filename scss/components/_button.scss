@@ -1,0 +1,26 @@
+@use '../variables';
+@use 'sass:map';
+
+.btn {
+  border-radius: 300px;
+  padding: map.get(variables.$spacings, 1) map.get(variables.$spacings, 2);
+  margin: map.get(variables.$spacings, 1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+  &:hover {
+    filter: invert(0.2);
+  }
+
+  transition: filter map.get(variables.$times, sm);
+}
+
+.btn.big {
+  padding: map.get(variables.$spacings, 2) map.get(variables.$spacings, 2);
+  margin: map.get(variables.$spacings, 2);
+}

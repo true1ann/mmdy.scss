@@ -1,0 +1,21 @@
+@use '../variables';
+@use 'sass:map';
+
+.card {
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  border-radius: map.get(variables.$borders, md);
+  margin: map.get(variables.$spacings, 2);
+  padding: map.get(variables.$spacings, 3);
+}
+
+.card .header {
+  margin: map.get(variables.$spacings, 1);
+  font-weight: bold;
+  border-bottom: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+  width: max-content;
+}
+
+.card .card {
+  border: map.get(variables.$borders, pxmd) solid var(--md-sys-color-outline);
+}

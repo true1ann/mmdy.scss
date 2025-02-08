@@ -1,0 +1,28 @@
+$border-styles: solid, dashed, dotted, double, groove, ridge, inset, outset;
+$sides: top, right, bottom, left;
+
+$borders: (
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 1.25rem,
+  pxsm: 1px,
+  pxmd: 2px,
+  pxlg: 4px,
+  max: 300px,
+);
+
+$spacings: (
+  0: 0,
+  1: 0.1rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 2rem,
+  5: 3rem,
+);
+
+$times: (
+  sm: 0.25s,
+  md: 0.5s,
+  lg: 0.75s,
+  xlg: 1s,
+)

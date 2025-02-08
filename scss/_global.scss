@@ -1,0 +1,144 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--md-sys-color-background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inblock {
+  display: inline-block;
+}
+
+.d-block {
+  display: block;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-bolder {
+  font-weight: bolder;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-lighter {
+  font-weight: lighter;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+@each $key, $value in $borders {
+  .br-#{$key} {
+    border-radius: $value;
+  }
+  .bw-#{$key} {
+    border-width: $value;
+  }
+}
+
+@each $style in $border-styles {
+  @each $side in $sides {
+    .b-#{$style}-#{$side} {
+      border-#{$side}-style: #{$style};
+    }
+  }
+}
+
+@each $style in $border-styles {
+  .b-#{$style} {
+    border-style: #{$style};
+  }
+}
+
+@each $key, $value in $spacings {
+  .m-#{$key} {
+    margin: $value;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  .ms-#{$key} {
+    margin-left: $value;
+  }
+
+  .me-#{$key} {
+    margin-right: $value;
+  }
+
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .my-#{$key} {
+    margin-bottom: $value;
+    margin-top: $value;
+  }
+
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  .ps-#{$key} {
+    padding-left: $value;
+  }
+
+  .pe-#{$key} {
+    padding-right: $value;
+  }
+
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .py-#{$key} {
+    padding-bottom: $value;
+    padding-top: $value;
+  }
+}
+
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: $i * 1%;
+  }
+}
+
