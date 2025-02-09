@@ -1,0 +1,13 @@
+@use '../variables';
+@use 'sass:map';
+
+.badge {
+  border-radius: map.get(variables.$borders, xsm);
+  padding: map.get(variables.$spacings, 1);
+  margin: map.get(variables.$spacings, 1);
+  font-size: map.get(variables.$fontsizes, 1);
+  display: inline-block;
+  background-color: var(--background-color);
+  color: var(--color);
+  border: map.get(variables.$borders, pxsm) solid var(--color-type-link);
+}

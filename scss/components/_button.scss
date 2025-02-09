@@ -7,11 +7,9 @@
   margin: map.get(variables.$spacings, 1);
   text-decoration: none;
   display: inline-block;
-}
-
-.btn.primary {
-  background-color: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
+  background-color: var(--background-color);
+  color: var(--color);
+  border: map.get(variables.$borders, pxsm) solid var(--border-color);
 
   &:hover {
     filter: invert(0.2);
@@ -21,6 +19,6 @@
 }
 
 .btn.big {
-  padding: map.get(variables.$spacings, 2) map.get(variables.$spacings, 2);
+  padding: map.get(variables.$spacings, 2);
   margin: map.get(variables.$spacings, 2);
 }

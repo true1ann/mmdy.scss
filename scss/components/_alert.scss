@@ -2,14 +2,10 @@
 @use 'sass:map';
 
 .alert {
-  border: map.get(variables.$borders, pxmd) solid var(--color);
+  border: map.get(variables.$borders, pxsm) solid var(--border-color);
   padding: map.get(variables.$spacings, 2);
   margin: map.get(variables.$spacings, 1);
   color: var(--color);
-  background-color: transparent;
+  background-color: var(--background-color);
   border-radius: map.get(variables.$borders, sm);
-
-  &.success {
-    --color: var(--md-sys-color-primary);
-  }
 }

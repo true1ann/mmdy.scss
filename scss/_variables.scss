@@ -1,19 +1,21 @@
 $border-styles: solid, dashed, dotted, double, groove, ridge, inset, outset;
 $sides: top, right, bottom, left;
+$colortypes: primary, secondary, tertiary, error;
 
 $borders: (
+  xsm: 0.25rem,
   sm: 0.5rem,
   md: 1rem,
   lg: 1.25rem,
-  pxsm: 1px,
-  pxmd: 2px,
+  pxsm: 2px,
+  pxmd: 3px,
   pxlg: 4px,
   max: 300px,
 );
 
 $spacings: (
   0: 0,
-  1: 0.1rem,
+  1: 0.15rem,
   2: 0.5rem,
   3: 1rem,
   4: 2rem,
@@ -25,4 +27,11 @@ $times: (
   md: 0.5s,
   lg: 0.75s,
   xlg: 1s,
-)
+);
+
+$fontsizes: (
+  0: 0,
+  1: 14px,
+  2: 16px,
+  3: 20px,
+);

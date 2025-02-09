@@ -1,0 +1,20 @@
+@use '../variables';
+@use 'sass:map';
+
+@each $colortype in variables.$colortypes {
+  .fill-#{$colortype} {
+    --background-color: var(--md-sys-color-#{$colortype});
+    --color: var(--md-sys-color-on-#{$colortype});
+    --border: none;
+    --color-type: $colortype;
+    --color-type-link: var(--md-sys-color-#{$colortype});
+  }
+
+  .outline-#{$colortype} {
+    --background-color: var(transparent);
+    --color: var(--md-sys-color-#{$colortype});
+    --border-color: var(--md-sys-color-#{$colortype});
+    --color-type: $colortype;
+    --color-type-link: var(--md-sys-color-#{$colortype});
+  }
+}
