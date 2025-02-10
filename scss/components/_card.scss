@@ -7,24 +7,16 @@
   border-radius: map.get(variables.$borders, md);
   margin: map.get(variables.$spacings, 2);
   padding: map.get(variables.$spacings, 3);
+  height: auto;
+  width: auto;
 
   .header,
   .footer {
-    margin: map.get(variables.$spacings, 1);
     font-weight: bold;
-    width: max-content;
-  }
-
-  .header {
-    border-bottom: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
-  }
-
-  .footer {
-    border-top: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
   }
 }
 
 
 .card .card {
-  border: map.get(variables.$borders, pxmd) solid var(--md-sys-color-outline);
+  border: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
 }

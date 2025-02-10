@@ -1,0 +1,32 @@
+@use '../variables';
+@use 'sass:map';
+
+.segmented-buttons {
+  margin: map.get(variables.$spacings, 2);
+  width: max-content;
+  border: map.get(variables.$borders, pxsm) solid var(--color-type-link);
+  background-color: var(--color-type-link);
+  border-radius: 300px;
+  display: flex;
+  overflow: hidden;
+  gap: map.get(variables.$borders, pxsm);
+
+  & > button {
+    border: none;
+    background-color: var(--color-type-on-link);
+    color: var(--color-type-link);
+    padding: map.get(variables.$spacings, 2) map.get(variables.$spacings, 3);
+
+    &.active {
+      background-color: var(--color-type-link);
+      color: var(--color-type-on-link);
+    }
+
+    &:hover {
+      filter: invert(0.2);
+    }
+  
+    transition: all map.get(variables.$times, sm);
+  }
+}
+

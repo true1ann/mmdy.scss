@@ -8,6 +8,7 @@
     --border: none;
     --color-type: $colortype;
     --color-type-link: var(--md-sys-color-#{$colortype});
+    --color-type-on-link: var(--md-sys-color-on-#{$colortype});
   }
 
   .outline-#{$colortype} {
@@ -16,5 +17,6 @@
     --border-color: var(--md-sys-color-#{$colortype});
     --color-type: $colortype;
     --color-type-link: var(--md-sys-color-#{$colortype});
+    --color-type-on-link: var(--md-sys-color-on-#{$colortype});
   }
 }

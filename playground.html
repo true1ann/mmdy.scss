@@ -9,64 +9,75 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-<div>
-  <div class="card">
-    <div class="header">HEADER</div>
-    <div class="body">THIS IS CURRENTLY UNDER DEVELOPMENT SO COMPONENTS LOOK RAW, SCRIPT ADDING EACH COMPONENT WILL BE IMPROVED AS WELL AS THE COMPONENTS THEMSELVES</div>
-    <div class="footer">FOOTER</div>
-  </div>
+    <div>
 
+        <div class="d-flex flex-wrap">
+            <div class="card p-0 w-max-content">
+                <img src="utahteapot.jpg" style="max-height: 15rem;" class="br-top-md">
+                <div class="p-3">
+                    <div class="header"><h2 class="m-0">The Utah teapot</h2></div>
+                    <div class="body">
+                        <div class="alert outline-error">10/35 left!</div>
+                        An amazing teapot
+                    </div>
+                    <div class="footer d-flex flex-column w-100">
+                        <button class="btn fill-primary flex">Order</button>
+                        <button class="btn fill-secondary flex">Add to card</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-0 w-max-content">
+                <img src="utahteapot.jpg" style="max-height: 15rem;" class="br-top-md">
+                <div class="p-3">
+                    <div class="header"><h2 class="m-0">MiniMDY.scss</h2></div>
+                    <div class="body">
+                        <div class="alert outline-primary">Allows you</div>
+                        to be <span class="badge fill-primary">yourself</span> and however you
+                    </div>
+                    <div class="footer d-flex flex-column w-100">
+                        <div class=" d-flex w-100">
+                            <button class="btn fill-primary flex br-md">Want</button>
+                            <button class="btn outline-secondary flex br-xsm">It</button>
+                        </div>
+                        <button class="btn fill-tertiary flex br-sm">To <span class="font-bold font-italic">be</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card h-max-content flex">
+                <div class="header">MiniMDY.scss: the better Material You</div>
+                <div class="body">
+                    <span>After a... <span class="font-italic">quite big</span> failure with MiniMDY, here it is.</span>
+                    <div class="d-flex">
+                        <div class="d-flex flex-column m-right-3">
+                            <div class="alert fill-primary">Better</div>
+                            <div class="alert fill-secondary">Responsive</div>
+                            <div class="alert fill-tertiary">Customizable</div>
+                            <div class="alert outline-primary">Lightweight</div>
+                        </div>
+                        <div class="d-flex flex-column m-top-3 gap-4">
+                            <span>...and I mean just that</span>
+                            <span>...Mobile-First always will be in mind</span>
+                            <span>...down to the latest pixel</span>
+                            <span>...without any JavaScript!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<script>
-    const types = ['primary', 'secondary', 'tertiary', 'error'];
-    const alerts = ['fill', 'outline'];
-    const badges = ['fill', 'outline'];
-    const buttons = ['fill', 'outline'];
-
-    const createElement = (tag, className, text) => {
-        const element = document.createElement(tag);
-        element.className = className;
-        element.textContent = text;
-        return element;
-    };
-
-    const appendElements = (parent, type, classPrefix, textPrefix) => {
-        types.forEach(type => {
-            alerts.forEach(alert => {
-                const text = `${alert.toUpperCase()} ${type.toUpperCase()} ALERT`;
-                parent.appendChild(createElement('div', `alert ${alert}-${type}`, text));
-            });
-        });
-    };
-
-    const appendBadges = (parent) => {
-        types.forEach(type => {
-            badges.forEach(badge => {
-                const text = `${badge.toUpperCase()} ${type.toUpperCase()} BADGE`;
-                parent.appendChild(createElement('span', `badge ${badge}-${type}`, text));
-            });
-        });
-    };
-
-    const appendButtons = (parent) => {
-        types.forEach(type => {
-            buttons.forEach(button => {
-                const text = `${button.toUpperCase()} ${type.toUpperCase()} BUTTON`;
-                parent.appendChild(createElement('button', `btn ${button}-${type}`, text));
-                parent.appendChild(createElement('button', `big btn ${button}-${type}`, `BIG ${button.toUpperCase()} ${type.toUpperCase()} BUTTON`));
-            });
-        });
-    };
-
-    const mainDiv = document.createElement('div');
-    document.body.appendChild(mainDiv);
-
-    appendElements(mainDiv, 'alert', 'alert', 'ALERT');
-    mainDiv.appendChild(document.createElement('hr'));
-    appendBadges(mainDiv);
-    mainDiv.appendChild(document.createElement('hr'));
-    appendButtons(mainDiv);
-</script>
-</div>
+        <div class="d-flex flex-column">
+            <div class="alert fill-primary">Ever felt like learning how segmented buttons work? well I made it easy</div>
+            <div class="segmented-buttons fill-primary">
+                <button class="active">first</button>
+                <button>second</button>
+                <button>third</button>
+            </div>
+            <div class="segmented-buttons outline-secondary">
+                <button class="active">first</button>
+                <button>second</button>
+                <button>third</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

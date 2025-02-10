@@ -7,54 +7,109 @@ body {
   background-color: var(--md-sys-color-background);
 }
 
-* {
-  box-sizing: border-box;
+* { box-sizing: border-box }
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.font-bold { font-weight: bold }
+.font-bolder { font-weight: bolder }
+.font-normal { font-weight: normal }
+.font-lighter { font-weight: lighter }
+.font-italic { font-style: italic }
+
+.text-deco-none { text-decoration: none; }
+.text-deco-underline { text-decoration: underline }
+.text-deco-overline { text-decoration: overline }
+.text-deco-linethru { text-decoration: line-through }
+.text-deco-dashed { text-decoration: dashed }
+.text-deco-dotted { text-decoration: dotted }
+.text-deco-wavy { text-decoration: wavy }
+
+.flex-wrap { flex-wrap: wrap }
+.flex-nowrap { flex-wrap: nowrap }
+.flex-wrap-reverse { flex-wrap: wrap-reverse }
+.flex { flex: 1 }
+
+.w-max-content { width: max-content }
+.w-min-content { width: min-content }
+.h-max-content { height: max-content }
+.h-min-content { height: min-content }
+
+$flex-options: row, column, row-reverse, column-reverse;
+@each $option in $flex-options {
+  .flex-#{$option} {
+    flex-direction: $option;
+  }
+};
+
+$justify-content-options: start, end, center, between, around, evenly;
+@each $option in $justify-content-options {
+  .justify-content-#{$option} {
+    justify-content: #{$option};
+  }
 }
 
-.d-flex {
-  display: flex;
+$align-items-options: start, end, center, baseline, stretch;
+@each $option in $align-items-options {
+  .align-items-#{$option} {
+    align-items: #{$option};
+  }
 }
 
-.d-inblock {
-  display: inline-block;
-}
-
-.d-block {
-  display: block;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.font-bold {
-  font-weight: bold;
-}
-
-.font-bolder {
-  font-weight: bolder;
-}
-
-.font-normal {
-  font-weight: normal;
-}
-
-.font-lighter {
-  font-weight: lighter;
-}
-
-.font-italic {
-  font-style: italic;
+@for $i from 0 through 5 {
+  .m-#{$i} {
+    margin: map.get($spacings, $i);
+  }
+  .p-#{$i} {
+    padding: map.get($spacings, $i);
+  }
+  .gap-#{$i} {
+    gap: map.get($spacings, $i);
+  }
+  @each $side in $sides {
+    .m-#{$side}-#{$i} {
+      margin-#{$side}: map.get($spacings, $i);
+    }
+    .p-#{$side}-#{$i} {
+      padding-#{$side}: map.get($spacings, $i);
+    }
+  }
 }
 
 @each $key, $value in $borders {
   .br-#{$key} {
     border-radius: $value;
   }
+
+  .br-top-#{$key} {
+    border-top-left-radius: $value;
+    border-top-right-radius: $value;
+  }
+
+  .br-bottom-#{$key} {
+    border-bottom-left-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
+  .br-left-#{$key} {
+    border-top-right-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
+  .br-right-#{$key} {
+    border-top-right-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
   .bw-#{$key} {
     border-width: $value;
   }
@@ -74,71 +129,18 @@ body {
   }
 }
 
-@each $key, $value in $spacings {
-  .m-#{$key} {
-    margin: $value;
-  }
-
-  .mb-#{$key} {
-    margin-bottom: $value;
-  }
-
-  .mt-#{$key} {
-    margin-top: $value;
-  }
-
-  .ms-#{$key} {
-    margin-left: $value;
-  }
-
-  .me-#{$key} {
-    margin-right: $value;
-  }
-
-  .mx-#{$key} {
-    margin-left: $value;
-    margin-right: $value;
-  }
-
-  .my-#{$key} {
-    margin-bottom: $value;
-    margin-top: $value;
-  }
-
-  .p-#{$key} {
-    padding: $value;
-  }
-
-  .pb-#{$key} {
-    padding-bottom: $value;
-  }
-
-  .pt-#{$key} {
-    padding-top: $value;
-  }
-
-  .ps-#{$key} {
-    padding-left: $value;
-  }
-
-  .pe-#{$key} {
-    padding-right: $value;
-  }
-
-  .px-#{$key} {
-    padding-left: $value;
-    padding-right: $value;
-  }
-
-  .py-#{$key} {
-    padding-bottom: $value;
-    padding-top: $value;
-  }
-}
-
 @for $i from 0 through 100 {
   .w-#{$i} {
     width: $i * 1%;
   }
+  .h-#{$i} {
+    height: $i * 1%;
+  }
 }
 
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 calc(100% / 12 * $i);
+    max-width: calc(100% / 12 * $i);
+  }
+}

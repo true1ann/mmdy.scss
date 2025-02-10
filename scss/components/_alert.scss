@@ -4,7 +4,7 @@
 .alert {
   border: map.get(variables.$borders, pxsm) solid var(--border-color);
   padding: map.get(variables.$spacings, 2);
-  margin: map.get(variables.$spacings, 1);
+  margin: map.get(variables.$spacings, 2);
   color: var(--color);
   background-color: var(--background-color);
   border-radius: map.get(variables.$borders, sm);

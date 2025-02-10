@@ -3,13 +3,13 @@
 
 .btn {
   border-radius: 300px;
-  padding: map.get(variables.$spacings, 1) map.get(variables.$spacings, 2);
-  margin: map.get(variables.$spacings, 1);
+  padding: map.get(variables.$spacings, 2);
+  margin: map.get(variables.$spacings, 2);
   text-decoration: none;
   display: inline-block;
   background-color: var(--background-color);
   color: var(--color);
-  border: map.get(variables.$borders, pxsm) solid var(--border-color);
+  border: map.get(variables.$borders, pxsm) solid var(--color-type-link);
 
   &:hover {
     filter: invert(0.2);
@@ -18,7 +18,7 @@
   transition: filter map.get(variables.$times, sm);
 }
 
-.btn.big {
-  padding: map.get(variables.$spacings, 2);
-  margin: map.get(variables.$spacings, 2);
+.btn.small {
+  padding: map.get(variables.$spacings, 1) map.get(variables.$spacings, 2);
+  margin: map.get(variables.$spacings, 1);
 }
