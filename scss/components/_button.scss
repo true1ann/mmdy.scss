@@ -11,7 +11,11 @@
   color: var(--color);
   border: map.get(variables.$borders, pxsm) solid var(--color-type-link);
 
-  &:hover {
+  &.disabled, &[disabled] {
+    filter: invert(0.2) brightness(0.75);
+  }
+
+  &:hover:not(.disabled):not([disabled]) {
     filter: invert(0.2);
   }
 

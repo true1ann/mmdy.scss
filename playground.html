@@ -17,11 +17,11 @@
                 <div class="p-3">
                     <div class="header"><h2 class="m-0">The Utah teapot</h2></div>
                     <div class="body">
-                        <div class="alert outline-error">10/35 left!</div>
+                        <div class="alert outline-error">Out of order.</div>
                         An amazing teapot
                     </div>
                     <div class="footer d-flex flex-column w-100">
-                        <button class="btn fill-primary flex">Order</button>
+                        <button disabled class="btn fill-primary flex">Order</button>
                         <button class="btn fill-secondary flex">Add to card</button>
                     </div>
                 </div>
@@ -65,18 +65,26 @@
             </div>
         </div>
 
-        <div class="d-flex flex-column">
-            <div class="alert fill-primary">Ever felt like learning how segmented buttons work? well I made it easy</div>
-            <div class="segmented-buttons fill-primary">
-                <button class="active">first</button>
-                <button>second</button>
-                <button>third</button>
+        <div class="d-flex">
+            <div>
+                <label class="switch fill-primary">
+                    <input type="checkbox">
+                    <div></div>
+                </label>
             </div>
-            <div class="segmented-buttons outline-secondary">
-                <button class="active">first</button>
-                <button>second</button>
-                <button>third</button>
+            <div>
+                <label class="switch fill-secondary">
+                    <input type="checkbox">
+                    <div></div>
+                </label>
             </div>
+            <div>
+                <label class="switch outline-error">
+                    <input type="checkbox">
+                    <div></div>
+                </label>
+            </div>
+            <button class="btn fill-primary">test</button>
         </div>
     </div>
 </body>
