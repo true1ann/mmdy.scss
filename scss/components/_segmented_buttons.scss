@@ -4,25 +4,41 @@
 .segmented-buttons {
   margin: map.get(variables.$spacings, 2);
   width: max-content;
-  border: map.get(variables.$borders, pxsm) solid var(--color-type-link);
-  background-color: var(--color-type-link);
-  border-radius: 300px;
+  background-color: transparent;
   display: flex;
   overflow: hidden;
-  gap: map.get(variables.$borders, pxsm);
 
   & > button {
-    border: none;
-    background-color: var(--color-type-on-link);
-    color: var(--color-type-link);
+    border: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+    border-left: calc(map.get(variables.$borders, pxsm)/2) solid var(--md-sys-color-outline);
+    border-right: calc(map.get(variables.$borders, pxsm)/2) solid var(--md-sys-color-outline);
+    background-color: transparent;
+    color: var(--color-type-on-container-link);
     padding: map.get(variables.$spacings, 2) map.get(variables.$spacings, 3);
 
-    &.active {
-      background-color: var(--color-type-link);
-      color: var(--color-type-on-link);
+    &:first-child {
+      border-top-left-radius: 300px;
+      border-bottom-left-radius: 300px;
+      border-left: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
     }
 
-    &:hover {
+    &:last-child {
+      border-top-right-radius: 300px;
+      border-bottom-right-radius: 300px;
+      border-right: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+    }
+
+    &.active,
+    &[active] {
+      background-color: var(--color-type-container-link);
+      color: var(--color-type-on-container-link);
+    }
+
+    &.disabled, &[disabled] {
+      filter: invert(0.2) brightness(0.75);
+    }
+  
+    &:hover:not(.disabled):not([disabled]) {
       filter: invert(0.2);
     }
   

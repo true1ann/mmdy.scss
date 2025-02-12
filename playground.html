@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mmdy.scss.pg</title>
-  <link href="css/site.css" rel="stylesheet">
-  <link href="css/roboto.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mmdy.scss.pg</title>
+    <link href="css/site.css" rel="stylesheet">
+    <link href="css/roboto.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -67,8 +80,8 @@
 
         <div class="d-flex">
             <div>
-                <label class="switch fill-primary">
-                    <input type="checkbox">
+                <label class="switch fill-primary" aria-disabled="true">
+                    <input type="checkbox" disabled>
                     <div></div>
                 </label>
             </div>
@@ -79,13 +92,68 @@
                 </label>
             </div>
             <div>
-                <label class="switch outline-error">
-                    <input type="checkbox">
+                <label class="switch outline-tertiary">
+                    <input type="checkbox" checked disabled>
                     <div></div>
                 </label>
             </div>
+            <div>
+                <label class="switch outline-error">
+                    <input type="checkbox" checked>
+                    <div></div>
+                </label>
+            </div>
+
             <button class="btn fill-primary">test</button>
         </div>
+        <div class="card">
+            <div class="body">
+                <div class="segmented-buttons fill-secondary">
+                    <button>a</button>
+                    <button active>b</button>
+                    <button>c</button>
+                    <button disabled>dddddddddddd</button>
+                </div>
+            </div>
+            <div class="body">
+                <div class="segmented-buttons fill-primary gap-2">
+                    <button>a</button>
+                    <button active>b</button>
+                    <button>c</button>
+                    <button disabled>dddddddddddd</button>
+                </div>
+            </div>
+        </div>
+        <div class="outlined card">card</div>
+        <div class="card outline-primary">card</div>
+        <div class="colorful outline-primary card">card</div>
+        <div class="colorful fill-secondary card">card</div>
+        <div class="colorful outline fill-tertiary card">card</div>
+        <div class="colorful outlined fill-error card">card</div>
+        <nav class="bar">
+            <div class="active">
+                <span class="icon material-symbols-outlined">home</span>
+                <span class="label">Overview</span>
+            </div>
+            <div>
+                <span class="icon material-symbols-outlined">settings</span>
+                <span class="label">Settings</span>
+            </div>
+            <div>
+                <span class="icon material-symbols-outlined">stacks</span>
+            </div>
+        </nav>
     </div>
+
+
+    <script>
+        const items = document.querySelectorAll('*');
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                items.forEach(i => i.classList.remove('active'));
+                event.target.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

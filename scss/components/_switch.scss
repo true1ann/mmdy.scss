@@ -12,7 +12,26 @@
   background-color: var(--md-sys-color-outline-variant);
   border-radius: 300px;
   position: relative;
-  border: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+  border: map.get(variables.$borders, pxmd) solid var(--md-sys-color-outline);
+  transition: all map.get(variables.$times, sm);
+
+  &:has(input:checked) {
+    background-color: var(--color-type-link);
+    border-color: var(--color-type-link);    
+  }
+
+  &.disabled, &[disabled],
+  &:has(input.disabled), &:has(input[disabled]) {
+    filter: invert(0.2) brightness(0.75);
+  }
+
+  &:hover:not(.disabled):not([disabled]):not([aria-disabled="true"]) {
+    filter: invert(0.2);
+  }
+
+  // for developers: PLEASE use aria-disabled on the div
+  // because i cant use :not and :has to detect if the thing is disabled
+  // if anyone knows how to stop using aria-disabled ***PLEASE*** open a pull request
 
   & > input {
     position: absolute;
@@ -24,6 +43,7 @@
     cursor: pointer;
     margin: 0;
     padding: 0;
+    z-index: -1;
   }
 
   & > div {
@@ -35,16 +55,12 @@
     aspect-ratio: 1;
     transition: all map.get(variables.$times, sm);
     margin-left: calc(map.get(variables.$spacings, 2)*0.5);
+    pointer-events: none;
   }
 
   & > input:checked + div {
     margin-left: calc(map.get(variables.$spacings, 2)*3.5);
     height: 100%;
     background-color: var(--color-type-on-link);
-  }
-
-  &:has(input:checked) {
-    background-color: var(--color-type-link);
-    border-color: var(--color-type-link);    
   }
 }

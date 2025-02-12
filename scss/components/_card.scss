@@ -16,7 +16,14 @@
   }
 }
 
-
-.card .card {
+.card.outlined {
   border: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+}
+
+.card.colorful {
+  background-color: var(--color-type-container-link);
+  color: var(--color-type-on-container-link);
+  &.outlined {
+  border: map.get(variables.$borders, pxsm) solid var(--color-type-link);
+  }
 }

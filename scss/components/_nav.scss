@@ -1,0 +1,49 @@
+@use '../variables';
+@use 'sass:map';
+
+nav.bar {
+  width: 100%;
+  background-color: var(--md-sys-color-surface-container);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    padding: map.get(variables.$spacings, 3);
+
+    & > .icon {
+      background-color: transparent;
+      padding: map.get(variables.$spacings, 1);
+      border-radius: 300px;
+      transition: all map.get(variables.$times, sm);
+      color: var(--md-sys-color-on-surface);
+    }
+
+    &.active > .icon {
+      color: var(--md-sys-color-on-secondary-container);
+      background-color: var(--md-sys-color-secondary-container);
+      padding-left: map.get(variables.$spacings, 3);
+      padding-right: map.get(variables.$spacings, 3);
+    }
+
+    & > .label {
+      margin-top: map.get(variables.$spacings, 1);
+      color: var(--md-sys-color-on-surface);
+      font-weight: 500;
+    }
+
+    &.active > .label {
+      color: var(--md-sys-color-on-surface-variant);
+    }
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+}
