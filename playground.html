@@ -129,22 +129,89 @@
         <div class="colorful outline-primary card">card</div>
         <div class="colorful fill-secondary card">card</div>
         <div class="colorful outline fill-tertiary card">card</div>
-        <div class="colorful outlined fill-error card">card</div>
-        <nav class="bar">
-            <div class="active">
-                <span class="icon material-symbols-outlined">home</span>
-                <span class="label">Overview</span>
+        <div class="colorful outlined fill-error card d-flex flex-column gap-3">
+            <div class="fill-primary linear-progress indeterminate"><div></div></div>
+            <div class="linear-progress"><div style="width: 50%"></div></div>              
+            <div class="alert fill-error">
+                Setting a proper progress % is not yet supported on a circular-progress because of some shitfuckery with var() inside calc()
             </div>
-            <div>
-                <span class="icon material-symbols-outlined">settings</span>
-                <span class="label">Settings</span>
+            <div class="fill-primary circular-progress" style="--mmdy-progress: 20">
+                <svg viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20"></circle>
+                </svg>
             </div>
-            <div>
-                <span class="icon material-symbols-outlined">stacks</span>
+            <div class="circular-progress indeterminate">
+                <svg viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20"></circle>
+                </svg>
             </div>
-        </nav>
+        </div>
     </div>
 
+    <div class="d-flex">
+        <div class="w-max-content">
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span>
+        </div>
+        <div class="w-max-content">
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span><div class="hr"></div>
+            <span>element</span>
+        </div>
+    </div>
+
+    <button class="fill-primary fab">
+        <span class="icon material-symbols-outlined">edit</span>
+    </button>
+    
+    <button class="fill-primary fab">
+        <span class="label">Edit</span>
+        <span class="icon material-symbols-outlined">edit</span>
+    </button>
+    
+    <button class="fill-secondary small fab">
+        <span class="icon material-symbols-outlined">edit</span>
+    </button>
+    
+    <button class="fill-secondary small fab">
+        <span class="label">Edit</span>
+        <span class="icon material-symbols-outlined">edit</span>
+    </button>    
+
+    <nav class="rail">
+        <div class="active">
+            <span class="icon material-symbols-outlined">home</span>
+            <span class="label">Overview</span>
+        </div>
+        <div>
+            <span class="icon material-symbols-outlined">settings</span>
+            <span class="label">Settings</span>
+        </div>
+        <div>
+            <span class="icon material-symbols-outlined">stacks</span>
+        </div>
+    </nav>
+
+    <nav class="bar">
+        <div class="active">
+            <span class="icon material-symbols-outlined">home</span>
+            <span class="label">Overview</span>
+        </div>
+        <div>
+            <span class="icon material-symbols-outlined">settings</span>
+            <span class="label">Settings</span>
+        </div>
+        <div>
+            <span class="icon material-symbols-outlined">stacks</span>
+        </div>
+    </nav>
 
     <script>
         const items = document.querySelectorAll('*');

@@ -1,0 +1,50 @@
+.circular-progress {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  svg {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+  circle {
+    stroke: var(--color-type-link);
+    stroke-linecap: round;
+    stroke-width: 4px;
+    fill: none;
+    stroke-dasharray: 126;
+    stroke-dashoffset: calc(126 * (100 - var(--mmdy-progress-percent, 50)) / 100);
+  }
+  &.indeterminate {
+    svg {
+      transform: none;
+      animation: mmdy-progress-circular-rotate 2s linear infinite;
+    }
+    circle {
+      animation: mmdy-progress-circular-dash 1.5s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes mmdy-progress-circular-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mmdy-progress-circular-dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100,200;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100,200;
+    stroke-dashoffset: -125px;
+  }
+}

@@ -1,0 +1,48 @@
+@use '../variables';
+@use 'sass:map';
+
+.fab {
+  background-color: var(--color-type-container-link);
+  color: var(--color-type-on-container-link);
+  height: calc(map.get(variables.$spacings, 2) * 9);
+  min-width: calc(map.get(variables.$spacings, 2) * 9);
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(map.get(variables.$spacings, 2)*1.5);
+  margin: map.get(variables.$spacings, 2);
+  border-radius: map.get(variables.$borders, lg);
+  transition: all map.get(variables.$times, sm);
+  border: none;
+  font: inherit;
+  font-size: map.get(variables.$fontsizes, 3);
+  
+  & > .icon {
+    font-size: map.get(variables.$fontsizes, 4);
+  }
+
+  &:has(.label) {
+    padding: 0 calc(map.get(variables.$spacings, 2) * 2);
+    height: calc(map.get(variables.$spacings, 2) * 7);
+  }
+
+  &.small {
+    height: calc(map.get(variables.$spacings, 2) * 7);
+    min-width: calc(map.get(variables.$spacings, 2) * 7);
+    font-size: map.get(variables.$fontsizes, 2);
+    border-radius: map.get(variables.$borders, md);
+
+    &:has(.label) {
+      padding: 0 calc(map.get(variables.$spacings, 2) * 1.5);
+      height: calc(map.get(variables.$spacings, 2) * 6);
+    }
+    & > .icon {
+      font-size: calc(map.get(variables.$fontsizes, 3)*1.25);
+    }
+  }
+
+  &:hover {
+    filter: invert(0.2);
+  }
+}

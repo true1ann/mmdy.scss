@@ -1,0 +1,40 @@
+@use '../variables';
+@use 'sass:map';
+
+.linear-progress {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: var(--md-sys-color-secondary-container);
+  overflow: hidden;
+
+  & > div {
+    position: absolute;
+    height: 100%;
+    background-color: var(--md-sys-color-primary);
+    transition: width 0.3s ease;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+  }
+
+  &.indeterminate > div {
+    width: 100%;
+    animation: mmdy-progress-linear-indeterminate 1.5s infinite linear;
+    border-radius: 300px;
+  }
+}
+
+@keyframes mmdy-progress-linear-indeterminate {
+  0% {
+    width: 0%;
+    transform: translateX(-100%);
+  }
+  80% {
+    width: 100%;
+    transform: translateX(100%);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(100%);
+  }
+}

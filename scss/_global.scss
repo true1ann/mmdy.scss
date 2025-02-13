@@ -8,6 +8,14 @@ body {
   color: var(--md-sys-color-on-background);
 }
 
+.hr,
+.vr {
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.hr { width: 100% }
+.vr { height: 100% }
+
 * { box-sizing: border-box }
 .d-none { display: none; }
 .d-block { display: block; }

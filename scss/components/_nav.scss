@@ -1,12 +1,24 @@
 @use '../variables';
 @use 'sass:map';
 
-nav.bar {
-  width: 100%;
+nav {
   background-color: var(--md-sys-color-surface-container);
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; 
+
+  // Note: you can actually implement those in a @media query but i dont want to because every site, in my opinion, has it's own mobile/desktop threshold, so its up to you how to implement and when to apply switching.
+  
+  &.bar {
+    width: 100%; 
+  }
+
+  &.rail {
+    width: max-content;
+    height: 100%;
+    flex-direction: column;
+  }
+
   & > div {
     display: flex;
     flex-direction: column;
