@@ -59,3 +59,50 @@ nav {
     }
   }
 }
+
+.navdrawer {
+  &.modal {
+    width: 75%;
+    background-color: var(--md-sys-color-surface-container);  
+  }
+  &.standart {
+    width: 35%;
+    background-color: var(--md-sys-color-surface);
+  }
+
+  border-top-right-radius: map.get(variables.$borders, lg);
+  border-bottom-right-radius: map.get(variables.$borders, lg);
+  height: 100%;
+  padding: map.get(variables.$spacings, 3);
+
+  & > div:not(.hr) {
+    margin: map.get(variables.$spacings, 2);
+    & > span {
+      margin-left: map.get(variables.$spacings, 2);
+      margin-bottom: map.get(variables.$spacings, 2);
+      font-size: map.get(variables.$fontsizes, 1);
+    }
+    & > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: map.get(variables.$spacings, 1);
+      border-radius: 300px;
+      padding: map.get(variables.$spacings, 2);
+      transition: all map.get(variables.$times, sm);
+
+      &.active {
+        background-color: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
+      }
+
+      & > .badge {
+        margin-left: auto;
+      }
+
+      & > * {
+        pointer-events: none;
+      }
+    }
+  }
+}

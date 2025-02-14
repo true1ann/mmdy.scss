@@ -1,0 +1,44 @@
+@use '../variables';
+@use 'sass:map';
+
+.tabs {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  & > div {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--md-sys-color-on-surface);
+    padding: map.get(variables.$spacings, 2);
+    transition: all map.get(variables.$times, sm);
+    & > * {
+      pointer-events: none;
+    }
+    &.active {
+      color: var(--md-sys-color-primary);
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        height: map.get(variables.$borders, pxsm);
+        background-color: var(--md-sys-color-primary);
+        border-radius: map.get(variables.$borders, pxsm);
+      }
+    }
+  }
+  &.secondary {
+    & > div.active::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

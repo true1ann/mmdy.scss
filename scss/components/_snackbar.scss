@@ -1,0 +1,20 @@
+@use '../variables';
+@use 'sass:map';
+
+.snackbar {
+  background-color: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  margin: map.get(variables.$spacings, 4);
+  padding: map.get(variables.$spacings, 3);
+  gap: map.get(variables.$spacings, 2);
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-radius: map.get(variables.$borders, xsm);
+
+  & > .action {
+    color: var(--md-sys-color-inverse-primary);
+    margin-left: auto;
+  }
+}

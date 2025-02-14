@@ -1,0 +1,41 @@
+@use '../variables';
+@use 'sass:map';
+
+.chip {
+  height: map.get(variables.$spacings, 4);
+  font: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: map.get(variables.$spacings, 2);
+  border-radius: map.get(variables.$borders, sm);
+  padding: map.get(variables.$spacings, 1) map.get(variables.$spacings, 2);
+  margin: map.get(variables.$spacings, 2);
+  font-size: map.get(variables.$fontsizes, 1);
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+  border: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline-variant);
+  transition: all map.get(variables.$times, sm);
+  position: relative;
+
+  &:hover {
+    filter: invert(0.2);
+  }
+
+  & > input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &:has(input:checked) {
+    background-color: var(--color-type-container-link);
+    border-color: var(--color-type-container-link);
+    color: var(--color-type-on-container-link);
+    &.fill-none, &.outline-none {
+      background-color: var(--md-sys-color-surface-container-low);
+      border-color: var(--md-sys-color-surface-container-low);
+    }
+  }
+}
