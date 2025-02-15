@@ -110,8 +110,8 @@ $align-items-options: start, end, center, baseline, stretch;
   }
 
   .br-left-#{$key} {
-    border-top-right-radius: $value;
-    border-bottom-right-radius: $value;
+    border-top-left-radius: $value;
+    border-bottom-left-radius: $value;
   }
 
   .br-right-#{$key} {
