@@ -1,0 +1,143 @@
+@use '../variables';
+@use 'sass:map';
+
+.textfield {
+  background-color: var(--md-sys-color-surface-container-highest);
+  display: flex;
+  padding: map.get(variables.$spacings, 2) 0 map.get(variables.$spacings, 2) 0;
+  gap: map.get(variables.$spacings, 2);
+  position: relative;
+  height: calc(map.get(variables.$spacings, 3) * 3.2);
+  margin: calc(map.get(variables.$spacings, 3) * 1.5) map.get(variables.$spacings, 2);
+  border-radius: map.get(variables.$borders, xsm);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+  transition: all map.get(variables.$times, xsm);
+  & > input {
+    height: 100%;
+    flex: 1;
+    background-color: transparent;
+    color: var(--md-sys-color-on-surface-variant);
+    border: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    min-width: 0;
+    transition: all map.get(variables.$times, xsm);
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  & > .lead,
+  & > .trail,
+  & > .suffix,
+  & > .prefix {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  & > .lead {
+    left: 0.5rem;
+  }
+  & > .trail {
+    right: 0.5rem;
+  }
+  & > .suffix,
+  & > .prefix {
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  & > .prefix {
+    margin-left: 0.5rem;
+  }
+  & > .suffix {
+    margin-right: 0.5rem;
+  }
+  &:has(.lead) {
+    padding-left: map.get(variables.$spacings, 2);
+  }
+  &:has(.trail) {
+    padding-right: map.get(variables.$spacings, 2);
+  }
+  & > .label,
+  & > .error {
+    left: 0.5rem;
+    pointer-events: none;
+    z-index: 2;
+    transition: all map.get(variables.$times, sm);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: map.get(variables.$spacings, 2);
+  }
+  & > .label {
+    top: 0.9rem;
+  }
+  & > .error {
+    bottom: 0.7rem;
+    opacity: 0;
+    font-size: map.get(variables.$fontsizes, 1);
+    color: var(--md-sys-color-error);
+  }
+  &:has(input:invalid) {
+    & > .error {
+      bottom: 0rem;
+      opacity: 1;
+    }
+  }
+  &:has(input:focus),
+  &:has(input:not(:placeholder-shown)),
+  &:has(.prefix),
+  &:has(.lead) {
+    & > .label {
+      top: 0rem;
+      font-size: map.get(variables.$fontsizes, 1);
+    }
+    & > input::placeholder {
+      color: var(--md-sys-color-on-surface-variant);
+    }
+  }
+  &:has(input:focus) > .label {
+    color: var(--md-sys-color-primary);
+  }
+  &:not(.outlined):has(input:focus) {
+    height: calc(map.get(variables.$spacings, 3) * 3.2 + map.get(variables.$borders, pxsm) * 0.5);
+    border-bottom: calc(map.get(variables.$borders, pxsm) * 1.5) solid var(--md-sys-color-primary);
+  }
+  &:has(input:disabled) {
+    opacity: 0.4;
+  }
+}
+
+.textfield.outlined {
+  background-color: transparent;
+  border-radius: map.get(variables.$borders, xsm);
+  border: map.get(variables.$borders, pxsm) solid var(--md-sys-color-outline);
+  &:has(input:focus) {
+    border: map.get(variables.$borders, pxmd) solid var(--md-sys-color-primary);
+  }
+  &:has(input:invalid) {
+    & > .error {
+      bottom: -0.55rem;
+      opacity: 1;
+      
+    }
+  }
+  &:has(input:focus),
+  &:has(input:not(:placeholder-shown)),
+  &:has(.prefix),
+  &:has(.lead) {
+    & > .label {
+      top: -0.55rem;
+    }
+  }
+  .error,
+  .label {
+    // TODO: erase the border behind these two
+  }
+}
