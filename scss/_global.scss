@@ -60,7 +60,7 @@ $flex-options: row, column, row-reverse, column-reverse;
   }
 };
 
-$justify-content-options: start, end, center, between, around, evenly;
+$justify-content-options: start, end, center, space-between, space-around, space-evenly;
 @each $option in $justify-content-options {
   .justify-content-#{$option} {
     justify-content: #{$option};
